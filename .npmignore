@@ -1,0 +1,10 @@
+# Directories
+/.github
+/docs
+/images
+/public
+/src
+
+# Files
+/.gitignore
+/yarn.lock
