@@ -15,6 +15,8 @@
     <a href="https://github.com/dotundefined/mui-numpad/issues">Report Bug</a>
     ·
     <a href="https://github.com/dotundefined/mui-numpad/issues">Request Feature</a>
+    ·
+    <a href="https://github.com/dotundefined/mui-numpad/issues">Ask a question</a>
   </p>
 </p>
 
