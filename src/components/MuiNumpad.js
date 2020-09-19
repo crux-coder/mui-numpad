@@ -1,53 +1,60 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import { Button } from '@material-ui/core';
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
+const useStyles = makeStyles((theme) => ({
+  container: {
+    padding: 0,
+    width: '100%'
   },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
+  numberRow: {
   },
-  title: {
-    fontSize: 14,
+  button: {
   },
-  pos: {
-    marginBottom: 12,
-  },
-});
+}));
 
-export default function MuiNumpad() {
+export default function SpacingGrid() {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
 
   return (
-    <Card className={classes.root}>
-      <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="h2">
-          be{bull}nev{bull}o{bull}lent
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          adjective
-        </Typography>
-        <Typography variant="body2" component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+    <Grid container className={classes.container} spacing={2}>
+      <Grid item xs={12}>
+        <Grid container justify="center" spacing={2}>
+          {[1, 2, 3].map((value) => (
+            <Grid key={value} item>
+              <Button color="primary" variant="outlined" className={classes.button}>{value}</Button>
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <Grid container justify="center" spacing={2}>
+          {[4, 5, 6].map((value) => (
+            <Grid key={value} item>
+              <Button color="primary" variant="outlined" className={classes.button}>{value}</Button>
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <Grid container justify="center" spacing={2}>
+          {[7, 8, 9].map((value) => (
+            <Grid key={value} item>
+              <Button color="primary" variant="outlined" className={classes.button}>{value}</Button>
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
+      <Grid item xs={12} className={classes.numberRow} >
+        <Grid container justify="center" className={classes.numberRow} spacing={2}>
+          {['.', 0, 'C'].map((value) => (
+            <Grid key={value} item>
+              <Button color="primary" variant="outlined" className={classes.button}>{value}</Button>
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
+    </Grid>
   );
 }
