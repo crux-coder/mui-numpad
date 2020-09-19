@@ -14,7 +14,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish:npm": "rm -rf dist && mkdir lib &&  babel ./src/components -d lib --copy-files"
+    "npm:publish": "rm -rf lib && mkdir lib &&  babel ./src/components -d lib --copy-files"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",

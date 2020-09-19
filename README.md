@@ -1,5 +1,5 @@
 <!-- PROJECT LOGO -->
-> ⚠️  **NOTE: This package is in very early stage of development. NOT recommended for production use yet.** ⚠️ 
+> ⚠️  **NOTE: This package is in very early stage of development. NOT recommended for production use yet.**
 
 <br />
 
