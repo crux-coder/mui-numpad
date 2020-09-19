@@ -1,8 +1,11 @@
 <!-- PROJECT LOGO -->
+> ⚠️  **NOTE: This package is in very early stage of development. NOT recommended for production use yet.** ⚠️ 
+
 <br />
+
 <p align="center">
   <a href="https://github.com/dotundefined/mui-numpad">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="./images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">MUI-NUMPAD</h3>
@@ -10,7 +13,7 @@
   <p align="center">
     Numpad component for your React app.
     <br />
-    <a href="https://github.com/dotundefined/mui-numpad">View Demo</a>
+    <a href="https://mui-numpad.herokuapp.com/">View Demo</a>
     ·
     <a href="https://github.com/dotundefined/mui-numpad/issues">Report Bug</a>
     ·
@@ -19,12 +22,20 @@
     <a href="https://github.com/dotundefined/mui-numpad/issues">Ask a question</a>
   </p>
 </p>
+<br />
+
+![npm](https://img.shields.io/npm/dw/mui-numpad?style=flat-square)
+![Maintenance](https://img.shields.io/maintenance/yes/2020?style=flat-square)
+
 
 
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
+* [Getting Started](#getting-started)
+  * [Installation](#installation)
+  * [Usage](#usage)
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
 * [Roadmap](#roadmap)
@@ -32,7 +43,70 @@
 * [License](#license)
 * [Contact](#contact)
 
+<!-- ABOUT THE PROJECT -->
+## Getting Started
 
+mui-numpad is available as an [npm package](https://www.npmjs.com/package/mui-numpad).
+
+### Installation
+
+```bash
+// with npm
+npm install mui-numpad
+// with yarn
+yarn add mui-numpad
+```
+
+### Usage
+
+#### Simple numpad
+
+```javascript
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import MuiNumpad from 'mui-numpad';
+import { Grid, TextField } from '@material-ui/core';
+
+const useStyles = makeStyles((theme) => ({
+    gridItem: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    textField: {
+        width: '100%',
+    }
+}));
+
+function SimpleNumpad() {
+    const classes = useStyles();
+    const [value, setValue] = useState();
+
+    const onChange = (_value) => {
+        setValue(_value);
+    }
+
+    return (
+        <Grid container spacing={2}>
+            <Grid item className={classes.gridItem} xs={3}>
+                <TextField 
+                margin="dense"
+                className={classes.textField}
+                value={value}
+                variant="outlined" />
+            </Grid>
+            <Grid item xs={3}>
+                <MuiNumpad
+                    onChange={onChange}
+                />
+            </Grid>
+        </Grid>
+    );
+}
+
+export default SimpleNumpad;
+```
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project

@@ -1,37 +1,158 @@
 ## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/dotundefined/mui-numpad/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+<!-- PROJECT LOGO -->
+> ⚠️  **NOTE: This package is in very early stage of development. NOT recommended for production use yet.** ⚠️ 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<br />
 
-### Markdown
+<p align="center">
+  <a href="https://github.com/dotundefined/mui-numpad">
+    <img src="./images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+  <h3 align="center">MUI-NUMPAD</h3>
 
-```markdown
-Syntax highlighted code block
+  <p align="center">
+    Numpad component for your React app.
+    <br />
+    <a href="https://mui-numpad.herokuapp.com/">View Demo</a>
+    ·
+    <a href="https://github.com/dotundefined/mui-numpad/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/dotundefined/mui-numpad/issues">Request Feature</a>
+    ·
+    <a href="https://github.com/dotundefined/mui-numpad/issues">Ask a question</a>
+  </p>
+</p>
+<br />
 
-# Header 1
-## Header 2
-### Header 3
+![npm](https://img.shields.io/npm/dw/mui-numpad?style=flat-square)
+![Maintenance](https://img.shields.io/maintenance/yes/2020?style=flat-square)
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [Getting Started](#getting-started)
+  * [Installation](#installation)
+  * [Usage](#usage)
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+
+<!-- ABOUT THE PROJECT -->
+## Getting Started
+
+mui-numpad is available as an [npm package](https://www.npmjs.com/package/mui-numpad).
+
+### Installation
+
+```bash
+// with npm
+npm install mui-numpad
+// with yarn
+yarn add mui-numpad
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Usage
 
-### Jekyll Themes
+#### Simple numpad
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/dotundefined/mui-numpad/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```javascript
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import MuiNumpad from 'mui-numpad';
+import { Grid, TextField } from '@material-ui/core';
 
-### Support or Contact
+const useStyles = makeStyles((theme) => ({
+    gridItem: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    textField: {
+        width: '100%',
+    }
+}));
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+function SimpleNumpad() {
+    const classes = useStyles();
+    const [value, setValue] = useState();
+
+    const onChange = (_value) => {
+        setValue(_value);
+    }
+
+    return (
+        <Grid container spacing={2}>
+            <Grid item className={classes.gridItem} xs={3}>
+                <TextField 
+                margin="dense"
+                className={classes.textField}
+                value={value}
+                variant="outlined" />
+            </Grid>
+            <Grid item xs={3}>
+                <MuiNumpad
+                    onChange={onChange}
+                />
+            </Grid>
+        </Grid>
+    );
+}
+
+export default SimpleNumpad;
+```
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+Numpad component for your React app.
+
+
+### Built With
+
+* [React.js](https://reactjs.org/)
+* [Material UI](https://material-ui.com/)
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/dotundefined/mui-numpad/issues) for a list of proposed features (and known issues).
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Jasmin Mustafic - mustaficjasmin7@gmail.com
+
+Project Link: [https://github.com/dotundefined/mui-numpad](https://github.com/dotundefined/mui-numpad)
