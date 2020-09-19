@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -6,18 +6,16 @@ import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import './App.css';
-import MuiNumpad from './components/MuiNumpad';
+import { Grid } from '@material-ui/core';
+import SimpleNumpad from './examples/SimpleNumpad';
 
 const drawerWidth = 240;
 
@@ -49,14 +47,25 @@ const useStyles = makeStyles((theme) => ({
     content: {
         flexGrow: 1,
         padding: theme.spacing(0),
+        marginTop: theme.spacing(10),
     },
+    contentContainer: {
+        width: '100%',
+    },
+    contentElement: {
+        marginLeft: theme.spacing(2),
+        marginRight: theme.spacing(2),
+    },
+    contentTitle: {
+        marginBottom: theme.spacing(2)
+    }
 }));
 
 function Main(props) {
     const { window } = props;
     const classes = useStyles();
     const theme = useTheme();
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -73,11 +82,8 @@ function Main(props) {
             </List>
             <Divider />
             <List>
-                <ListItem button key="simple-numpad">
+                <ListItem href="#simple-numpad" button key="simple-numpad">
                     <ListItemText primary="Simple Numpad" />
-                </ListItem>
-                <ListItem button key="input-numpad">
-                    <ListItemText primary="Numpad with text field" />
                 </ListItem>
             </List>
             <Divider />
@@ -85,7 +91,6 @@ function Main(props) {
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
-
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -137,12 +142,11 @@ function Main(props) {
                 </Hidden>
             </nav>
             <main className={classes.content}>
-                <div className={classes.toolbar} />
-                <div className="App">
-                    <header className="App-header">
-                        <MuiNumpad />
-                    </header>
-                </div>
+                <Grid container className={classes.contentContainer} spacing={2}>
+                    <Grid id="simple-numpad" className={classes.contentElement} item xs={12}>
+                        <SimpleNumpad />
+                    </Grid>
+                </Grid>
             </main>
         </div>
     );
