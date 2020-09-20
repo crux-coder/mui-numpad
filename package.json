@@ -41,5 +41,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "keywords": [
+    "numpad",
+    "react",
+    "mui-numpad",
+    "material ui"
+  ]
 }

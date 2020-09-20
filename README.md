@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/dotundefined/mui-numpad">
-    <img src="./images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://i.imgur.com/n8LojKk.png" title="logo" alt="numpad logo" />
   </a>
 
   <h3 align="center">MUI-NUMPAD</h3>
@@ -64,8 +64,9 @@ yarn add mui-numpad
 ```javascript
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import MuiNumpad from 'mui-numpad';
 import { Grid, TextField } from '@material-ui/core';
+
+import MuiNumpad from 'mui-numpad';
 
 const useStyles = makeStyles((theme) => ({
     gridItem: {
