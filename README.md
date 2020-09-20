@@ -36,6 +36,7 @@
 * [Getting Started](#getting-started)
   * [Installation](#installation)
   * [Usage](#usage)
+  * [Props](#props)
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
 * [Roadmap](#roadmap)
@@ -108,6 +109,18 @@ function SimpleNumpad() {
 
 export default SimpleNumpad;
 ```
+
+### Props
+
+| Name           	| Type     	| Default  	| Description                                                                                                                                                                                                                      	|
+|----------------	|----------	|----------	|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| onChange       	| `func`     	|          	| Callback fired when the value is changed. <br><br>function(value: string) => string  value: The value that has been entered. Value is concatenated internally, so with each input you will be getting full value entered so far. 	|
+| onKeyPress     	| `func`     	|          	| Callback fired when the key is pressed. <br><br>function(value: string) => string  value: The value of a button that has been pressed.                                                                                           	|
+| ButtonProps    	| `object`   	| {}       	| Props passed to each button of the numpad.<br><br>List of button props can be found here: https://material-ui.com/api/button/                                                                                                    	|
+| TextFieldProps 	| `object`   	| {}       	| Props passed to text field of the numpad.<br><br>List of text field props can be found here: https://material-ui.com/api/text-field/                                                                                             	|
+| variant        	| `'simple'` 	| 'simple' 	| Numpad variant.                      
+
+
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project

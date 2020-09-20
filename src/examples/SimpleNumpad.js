@@ -38,7 +38,12 @@ function SimpleNumpad(props) {
             </div>
             <Grid container spacing={2}>
                 <Grid item className={classes.gridItem} xs={3}>
-                    <TextField margin="dense" onChange={() => ''} className={classes.textField} value={value} id="outlined-basic" variant="outlined" />
+                    <TextField
+                        margin="dense"
+                        className={classes.textField}
+                        value={value}
+                        id="outlined-basic"
+                        variant="outlined" />
                 </Grid>
                 <Grid item xs={3}>
                     <MuiNumpad
