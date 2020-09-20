@@ -19,16 +19,26 @@ const useStyles = makeStyles((theme) => ({
 const MuiNumpad = (props) => {
   const {
     onChange,
-    onKeyPress } = props;
+    onKeyPress,
+    // ButtonProps,
+    // TextFieldProps,
+    // variant,
+  } = props;
+
   const classes = useStyles();
+
   const [inputValue, setInputValue] = useState('');
   const [disabledDot, setDisabledDot] = useState(false);
 
-  const onButtonPress = (_value) => {
+  const handleOnChange = (_value) => {
     const newValue = inputValue.concat(_value);
     setInputValue(newValue);
     onChange(newValue);
-    onKeyPress(_value);
+  }
+
+  const onButtonPress = (_value) => {
+    if (onChange) handleOnChange(_value);
+    if (onKeyPress) onKeyPress(_value);
   }
 
   const handleClear = () => {
@@ -89,12 +99,18 @@ const MuiNumpad = (props) => {
 
 MuiNumpad.propTypes = {
   onChange: PropTypes.func,
-  onKeyPress: PropTypes.func
+  onKeyPress: PropTypes.func,
+  ButtonProps: PropTypes.object,
+  TextFieldProps: PropTypes.object,
+  variant: PropTypes.oneOf(['simple'])
 };
 
 MuiNumpad.defaultProps = {
-  onChange: () => { },
-  onKeyPress: () => { },
+  onChange: undefined,
+  onKeyPress: undefined,
+  ButtonProps: {},
+  TextFieldProps: {},
+  variant: 'simple',
 };
 
 export default MuiNumpad;
