@@ -152,6 +152,10 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Jasmin Mustafic - mustaficjasmin7@gmail.com
+Jasmin Mustafic
 
-Project Link: [https://github.com/dotundefined/mui-numpad](https://github.com/dotundefined/mui-numpad)
+`Gmail:` mustaficjasmin7@gmail.com
+
+`Patreon:` https://www.patreon.com/dotundefined
+
+`Linkedin:` https://www.linkedin.com/in/jasmin-mustafic-126141151/
