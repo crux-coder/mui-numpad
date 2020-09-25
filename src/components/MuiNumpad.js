@@ -20,9 +20,6 @@ const MuiNumpad = (props) => {
   const {
     onChange,
     onKeyPress,
-    // ButtonProps,
-    // TextFieldProps,
-    // variant,
   } = props;
 
   const classes = useStyles();
@@ -100,17 +97,11 @@ const MuiNumpad = (props) => {
 MuiNumpad.propTypes = {
   onChange: PropTypes.func,
   onKeyPress: PropTypes.func,
-  ButtonProps: PropTypes.object,
-  TextFieldProps: PropTypes.object,
-  variant: PropTypes.oneOf(['simple'])
 };
 
 MuiNumpad.defaultProps = {
   onChange: undefined,
   onKeyPress: undefined,
-  ButtonProps: {},
-  TextFieldProps: {},
-  variant: 'simple',
 };
 
 export default MuiNumpad;
