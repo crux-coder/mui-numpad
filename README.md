@@ -26,7 +26,7 @@
 
 ![npm](https://img.shields.io/npm/dw/mui-numpad?style=flat-square)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020?style=flat-square)
-
+![GitHub package.json version](https://img.shields.io/github/package-json/v/dotundefined/mui-numpad?style=flat-square)
 
 
 
@@ -36,6 +36,7 @@
 * [Getting Started](#getting-started)
   * [Installation](#installation)
   * [Usage](#usage)
+  * [Props](#props)
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
 * [Roadmap](#roadmap)
@@ -108,6 +109,15 @@ function SimpleNumpad() {
 
 export default SimpleNumpad;
 ```
+
+### Props
+
+| Name           	| Type     	| Default  	| Description                                                                                                                                                                                                                      	|
+|----------------	|----------	|----------	|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| onChange       	| `func`     	|          	| Callback fired when the value is changed. <br><br>function(value: string) => string  value: The value that has been entered. Value is concatenated internally, so with each input you will be getting full value entered so far. 	|
+| onKeyPress     	| `func`     	|          	| Callback fired when the key is pressed. <br><br>function(value: string) => string  value: The value of a button that has been pressed.                                                                                           	|                    
+
+
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
