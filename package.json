@@ -1,6 +1,6 @@
 {
   "name": "mui-numpad",
-  "version": "0.1.3-alpha",
+  "version": "0.1.4-alpha",
   "private": false,
   "license": "MIT",
   "main": "./lib/MuiNumpad.js",
@@ -14,7 +14,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "npm:publish": "rm -rf lib && mkdir lib &&  babel ./src/components -d lib --copy-files"
+    "npm:publish": "rm -rf lib && mkdir lib &&  babel ./src/components -d lib --copy-files",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -24,7 +26,16 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
     "@babel/preset-react": "^7.10.4",
+    "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-essentials": "^6.0.21",
+    "@storybook/addon-links": "^6.0.21",
+    "@storybook/node-logger": "^6.0.21",
+    "@storybook/preset-create-react-app": "^3.1.4",
+    "@storybook/react": "^6.0.21",
+    "babel-loader": "^8.1.0",
+    "react-is": "^16.13.1",
     "react-scripts": "3.4.3"
   },
   "eslintConfig": {

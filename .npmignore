@@ -1,5 +1,6 @@
 # Directories
 /.github
+/.storybook
 /docs
 /images
 /public
